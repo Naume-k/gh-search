@@ -1,6 +1,6 @@
 <form>
     <div class="form-group">
-      <input #button type="text" class="form-control" name="find" placeholder="Enter username">
-      <button type="submit" class="btn btn-group" (click)="searchFor()"> Search</button>
+      <input #name type="text" class="form-control"  placeholder="Enter username">
+      <button type="submit" class="btn btn-group" (click)="searchFor(name.value)"> Search</button>
     </div>
   </form>
