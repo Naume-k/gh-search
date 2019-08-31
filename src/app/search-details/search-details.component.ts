@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+import { User } from "../user";
+import { Repo } from "../repo";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-search-details',
