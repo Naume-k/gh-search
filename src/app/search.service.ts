@@ -46,4 +46,28 @@ export class SearchService {
     return promise;
   }
 
+  repoDemand(ide) {
+    interface ApiResponse {
+      name: string;
+      description: string;
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>("https://api.github.com/users/" + ide +"/repos?access_token=" +environment.apikey).toPromise().then(response => {
+            for (var j in response) {
+              this.repos.push(response[j]);
+            }
+            console.log(this.repos);
+            resolve();
+          },
+          error => {
+            this.users.name = "next time next time";
+            this.users.avatar = "ooops!! next time";
+            this.users.repos = 0;
+            this.users.name = "next time";
+            reject(error);
+          }
+        );
+    });
+    return promise;
+  }
 }
