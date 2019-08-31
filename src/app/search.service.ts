@@ -8,12 +8,12 @@ import {environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class SearchService {
-  user: User;
-  repo: Repo[];
+  users: User;
+  repos: Repo[];
 
   constructor(private http:HttpClient) { 
-    this.user = new User(0,"","",0);
-    this.repo = [];
+    this.users = new User(0,"","",0);
+    this.repos = [];
   }
   
   userRequest(){
@@ -23,5 +23,27 @@ export class SearchService {
       avatar_url:string;
       public_repos: number;
     }
-    
+
+    let promise = new Promise((resolve,reject)=>{
+      this.http.get<ApiResponse>(environment.apikey).toPromise().then(response=>{
+        this.users.name = response.login;
+            this.users.avatar = response.avatar_url;
+            this.users.repos = response.public_repos;
+            this.users.id = response.id;
+            console.log(this.users);
+
+        resolve()
+      },
+      error=>{
+        this.users.name = "next next time";
+            this.users.avatar = "ooops!! next time";
+            this.users.repos = 0;
+            this.users.name = "next time";
+
+        reject(error);
+      });
+    });
+    return promise;
+  }
+
 }

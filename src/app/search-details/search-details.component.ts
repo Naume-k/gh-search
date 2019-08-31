@@ -10,6 +10,9 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./search-details.component.css']
 })
 export class SearchDetailsComponent implements OnInit {
+  searchservice: SearchService;
+  user: User;
+  repo: Repo[];
 
   constructor() { }
 
