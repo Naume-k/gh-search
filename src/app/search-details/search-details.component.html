@@ -25,20 +25,17 @@
         <div class="col-md-8">
             <div class="table table-striped card">
                 <table class="table card-body">
-                  <tbody>
-                  <tr *ngFor='let repository of userRepos.newRepository'>
-                    <td>
-                        <a href="{{repository.html_url}}" target="_blank" >{{repos.name}}</a>
-        
-                        <br>
-                      <p class="desc">Description: {{repos.description}}</p>
-                      <br>
-                      <p>Date Created: {{repos.created_at | date}}</p>
-                    </td>
-                  </tr>
-                  </tbody>
+                    <tbody>
+                        <tr *ngFor='let repository of userRepos.newRepository'>
+                        <td>
+                            <a href="{{repository.html_url}}" target="_blank" >{{repos.name}}</a><br>
+                            <p class="desc">Description: {{repos.description}}</p><br>
+                            <p>Date Created: {{repos.created_at | date}}</p>
+                        </td>
+                        </tr>
+                    </tbody>
                 </table>
-              </div>
+            </div>
         </div>
     </div>
 </div>
