@@ -16,4 +16,12 @@ export class SearchService {
     this.repo = [];
   }
   
+  userRequest(){
+    interface ApiResponse{
+      login:string;
+      id: number;
+      avatar_url:string;
+      public_repos: number;
+    }
+    
 }
