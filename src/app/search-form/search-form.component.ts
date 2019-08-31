@@ -9,6 +9,11 @@ import { Repo } from "../repo";
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
+  goToUrl(id) {
+    this.router.navigate(["/search-details", id]);
+  }
+  repo: Repo[];
+  user: User;
 
   constructor() { }
 
