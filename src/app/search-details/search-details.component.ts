@@ -14,9 +14,18 @@ export class SearchDetailsComponent implements OnInit {
   user: User;
   repo: Repo[];
 
-  constructor() { }
+  constructor(
+    // private search: SearchService,
+    // private router: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    // let id = this.router.snapshot.paramMap.get("id");
+    // this.searchservice.userDemand(id);
+    // this.searchservice.repoDemand(id);
+
+    // this.user = this.search.users;
+    // this.repo = this.search.repos;
   }
 
 }
