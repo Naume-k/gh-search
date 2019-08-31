@@ -29,7 +29,7 @@
                         <tr *ngFor='let repository of userRepos.newRepository'>
                         <td>
                             <a href="{{repository.html_url}}" target="_blank" >{{repos.name}}</a><br>
-                            <p class="desc">Description: {{repos.description}}</p><br>
+                            <p >Description: {{repos.description}}</p><br>
                             <p>Date Created: {{repos.created_at | date}}</p>
                         </td>
                         </tr>
