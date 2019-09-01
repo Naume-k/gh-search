@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchDetailsComponent } from './search-details/search-details.component';
+import { UpperCasePipe } from './upper-case.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SearchFormComponent,
-    SearchDetailsComponent
+    SearchDetailsComponent,
+    UpperCasePipe
   ],
   imports: [
     BrowserModule,
