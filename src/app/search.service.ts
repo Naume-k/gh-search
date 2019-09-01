@@ -12,24 +12,26 @@ export class SearchService {
   repos: Repo[];
 
   constructor(private http:HttpClient) { 
-    this.users = new User(0,"","",0);
+    this.users = new User(0,"","",0,"");
     this.repos = [];
   }
   
-  userRequest(){
+  userDemand(id){
     interface ApiResponse{
       login:string;
       id: number;
       avatar_url:string;
       public_repos: number;
+      html_url:string;
     }
 
     let promise = new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>(environment.apikey).toPromise().then(response=>{
+      this.http.get<ApiResponse>("https://api.github.com/users/"+id+ "?access_token=" +environment.apikey).toPromise().then(response=>{
         this.users.name = response.login;
             this.users.avatar = response.avatar_url;
             this.users.repos = response.public_repos;
             this.users.id = response.id;
+            this.users.profile = response.html_url;
             console.log(this.users);
 
         resolve()
@@ -39,6 +41,7 @@ export class SearchService {
             this.users.avatar = "ooops!! next time";
             this.users.repos = 0;
             this.users.name = "next time";
+            this.users.profile = "next time";
 
         reject(error);
       });

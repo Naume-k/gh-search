@@ -1,36 +1,40 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 card">
+            <h2>USER INFO</h2>
             <div class="card-body">
-                <img src="{{user.avatar_url}}">
+                <img src="{{user.avatar}}" width="90%">
                 <table class="table table-striped table-light">
                     <tbody>
                         <tr>
                             <th scope="row">Github Username:</th>
-                            <td> <a href="{{user.html_url}}" target="_blank">{{users.login}} </a></td>
+                            <td> <a href="{{user.html_url}}" target="_blank">{{user.name}} </a></td>
   
                         </tr>
                         <tr>
                             <th scope="row">Repositories:</th>
-                            <td>{{user.public_repos }}</td>
+                            <td>{{user.repos }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Date created:</th>
-                            <td>{{user.created_at | date}}</td>
+                            <!-- <th scope="row">Date created:</th> -->
+                            <!-- <td><input src="{{user.profile}}">View Profile</button></td> -->
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 ">
+            <h2>REPOSITORIES</h2><br>
             <div class="table table-striped card">
                 <table class="table card-body">
                     <tbody>
-                        <tr *ngFor='let repository of userRepos.newRepository'>
+                        <!-- <tr *ngFor='let repository of userRepos.newRepository'> -->
+                                <tr *ngFor='let rep of repo'>
                         <td>
-                            <a href="{{repository.html_url}}" target="_blank" >{{repo.name}}</a><br>
-                            <p >Description: {{repo.description}}</p><br>
-                            <p>Date Created: {{repo.created_at | date}}</p>
+                            <!-- <a href="{{repository.html_url}}" target="_blank" >{{rep.name}}</a><br> -->
+                            <a  target="_blank" >{{rep.name}}</a><br>
+                            <p >Description: {{rep.description}}</p><br>
+                            <p>Date Created: {{rep.created_at | date}}</p>
                         </td>
                         </tr>
                     </tbody>

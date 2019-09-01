@@ -6,9 +6,9 @@ import { SearchDetailsComponent } from './search-details/search-details.componen
 // import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  { path: "SearchFormComponent", component: SearchFormComponent },
   { path: "", component: SearchFormComponent },
-  { path: "", component: SearchDetailsComponent },
-  { path: "display/:id", component: SearchDetailsComponent }
+  { path: "search-details/:id", component: SearchDetailsComponent }
 ];
 
 @NgModule({
