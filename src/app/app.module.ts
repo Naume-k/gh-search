@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchDetailsComponent } from './search-details/search-details.component';
 import { UpperCasePipe } from './upper-case.pipe';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UpperCasePipe } from './upper-case.pipe';
     NavbarComponent,
     SearchFormComponent,
     SearchDetailsComponent,
-    UpperCasePipe
+    UpperCasePipe,
+    StrikethroughDirective
   ],
   imports: [
     BrowserModule,
